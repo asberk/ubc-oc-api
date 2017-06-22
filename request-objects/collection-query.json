@@ -1,0 +1,26 @@
+// change query to change what we're search for
+// change index to change the collection that we're searching from
+{
+  "from": 0,
+  "size": 10,
+  "body": {
+    "sort": {
+      "_score": {
+        "order": "desc"
+      }
+    },
+    "fields": [
+      "creator",
+      "description",
+      "subject",
+      "title"
+    ],
+    "query": {
+      "query_string": {
+        "query": "gold rush"
+      }
+    }
+  },
+  "index": "bcbooks",
+  "type": "object"
+}
